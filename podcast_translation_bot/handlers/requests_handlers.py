@@ -15,7 +15,6 @@ async def get_mp3_file(update: Update, context: CallbackContext):
 
 async def get_video(update: Update, context: CallbackContext):
     url_message = update.message.text
-    # че то мне не нравится этот участок кода ваще/////
     video = Video(url_message)
     title = video.get_video_title()
     video.download_video()
