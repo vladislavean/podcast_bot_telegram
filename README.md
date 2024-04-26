@@ -9,8 +9,8 @@ poetry install
 poetry run python3.12 main.py
 ```
 Далее нужно создать файл .env в корневой директории с следующим содержимым
-'''
+```
 TOKEN = "telegram-bot-token"
 PATH = "путь до директории"
-'''
+```
 
