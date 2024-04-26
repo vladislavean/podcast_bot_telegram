@@ -1,7 +1,11 @@
 from telegram import Update
 from telegram.ext import ContextTypes, ConversationHandler, CallbackContext, filters
 from podcast_translation_bot.functions import Video
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
+PATH = os.getenv("PATH")
 GET_VIDEO = range(1)
 
 async def get_mp3_file(update: Update, context: CallbackContext):
@@ -15,7 +19,7 @@ async def get_video(update: Update, context: CallbackContext):
     video = Video(url_message)
     title = video.get_video_title()
     video.download_video()
-    await update.message.reply_document(document=f'/Users/vladislavananev/Desktop/project/podcast-translation-bot/static/{title}.mp3')
+    await update.message.reply_document(document=f'{PATH}static/{title}.mp3')
     return ConversationHandler.END
 
 async def cancle_url_getting(update: Update, context: CallbackContext):
