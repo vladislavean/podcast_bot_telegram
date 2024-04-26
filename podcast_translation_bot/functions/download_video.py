@@ -8,7 +8,6 @@ class Video:
     def __init__(self, url: str):
         self.yt = YouTube(url)
         self.video = self.yt.streams.filter(only_audio=True).first() 
-        self.PATH = os.getenv("PATH")
 
     def get_video_title(self) -> str:
         return self.video.title

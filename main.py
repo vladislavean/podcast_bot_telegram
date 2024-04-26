@@ -32,6 +32,8 @@ def get_app(TOKEN: str):
 
 
 if __name__ == '__main__':
-
-    app = get_app(TOKEN)
-    app.run_polling()
+    try:
+        app = get_app(TOKEN)
+        app.run_polling()
+    except:
+        raise StartingAppError
