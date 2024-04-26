@@ -1,5 +1,4 @@
 
-"""
 class InvalidUrlError(Exception):
     def __init__(self):
         pass
@@ -12,5 +11,3 @@ class StartingAppError(Exception):
         pass
     def __str__(self):
         return "Starting app error"
-
-"""

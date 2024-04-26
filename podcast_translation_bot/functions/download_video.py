@@ -14,7 +14,7 @@ class Video:
         return self.video.title
     
     def download_video(self) -> None:
-        self.video.download(filename=f'{self.PATH}static/{self.get_video_title()}.mp3')
+        self.video.download(filename=f'{os.getcwd()}/static/{self.get_video_title()}.mp3')
         
     
     

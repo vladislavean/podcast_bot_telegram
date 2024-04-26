@@ -18,7 +18,7 @@ async def get_video(update: Update, context: CallbackContext):
     video = Video(url_message)
     title = video.get_video_title()
     video.download_video()
-    await update.message.reply_document(document=f'{PATH}static/{title}.mp3')
+    await update.message.reply_document(document=f'{os.getcwd()}/static/{title}.mp3')
     return ConversationHandler.END
 
 async def cancle_url_getting(update: Update, context: CallbackContext):
