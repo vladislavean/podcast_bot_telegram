@@ -23,10 +23,9 @@ class HandlersDeclaration:
         )
         return conv_handler_mp3
    
-    @staticmethod
-    def handlers_declaration(app: ApplicationBuilder) -> ApplicationBuilder:
+    def handlers_declaration(self, app: ApplicationBuilder) -> ApplicationBuilder:
             app.add_handler(CommandHandler('start', start))
-            app.add_handler(HandlersDeclaration.mp3_conversation_hander())
+            app.add_handler(self.mp3_conversation_hander())
             return app
 
      
