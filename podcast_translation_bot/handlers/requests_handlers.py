@@ -21,7 +21,7 @@ async def get_video(update: Update, context: CallbackContext):
     await update.message.reply_document(document=f'{os.getcwd()}/static/{title}.mp3')
     return ConversationHandler.END
 
-async def cancle_url_getting(update: Update, context: CallbackContext):
+async def cancel_url_getting(update: Update, context: CallbackContext):
     await update.message.reply_text("Возвращайтесь, когда захотите!")
     return ConversationHandler.END
 
