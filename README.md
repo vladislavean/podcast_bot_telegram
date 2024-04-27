@@ -13,3 +13,10 @@ TOKEN = "telegram-bot-token"
 ```
 poetry run python3.12 main.py
 ```
+
+Или используйте docker для запуска. 
+Для этого зайдите в корневую папку проекта и напишите:
+
+```
+docker-compose up [-d если нужно запустить как daemon]
+```
