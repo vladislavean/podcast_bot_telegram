@@ -8,7 +8,7 @@ from podcast_translation_bot.handlers import (start,
                             get_mp3_file, 
                             get_mp3_file_with_translate, 
                             get_video, 
-                            GET_VIDEO, 
+                            GET_VIDEO,
                             cancle_url_getting)
 
 class HandlersDeclaration:

@@ -25,6 +25,7 @@ TOKEN = os.getenv("TOKEN")
 
 def get_app(TOKEN: str):
     app = ApplicationBuilder().token(TOKEN).build()
+    
     handlers = HandlersDeclaration()
     application = handlers.handlers_declaration(app)
     
