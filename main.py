@@ -13,7 +13,7 @@ python telegram bot https://docs.python-telegram-bot.org/en/v21.1.1/index.html Ð
 """
 
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
-from podcast_translation_bot.handlers import start, get_mp3_file, get_mp3_file_with_translate, get_video, GET_VIDEO, cancle_url_getting
+from podcast_translation_bot.handlers import start, get_mp3_file, get_mp3_file_with_translate, get_video, GET_VIDEO, cancel_url_getting
 import os
 from exceptions import StartingAppError
 from handlers_declaration import HandlersDeclaration

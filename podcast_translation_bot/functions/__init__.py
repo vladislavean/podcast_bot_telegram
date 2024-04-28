@@ -1,1 +1,1 @@
-from .download_video import Video
+from .download_video import Video, VideoDownloader

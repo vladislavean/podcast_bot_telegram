@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import ContextTypes, ConversationHandler, CallbackContext, filters
-from podcast_translation_bot.functions import Video
+from podcast_translation_bot.functions import Video, VideoDownloader
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -16,8 +16,8 @@ async def get_mp3_file(update: Update, context: CallbackContext):
 async def get_video(update: Update, context: CallbackContext):
     url_message = update.message.text
     video = Video(url_message)
-    title = video.get_video_title()
-    video.download_video()
+    title = video.get_video_title
+    VideoDownloader.download_video(video)
     await update.message.reply_document(document=f'{os.getcwd()}/static/{title}.mp3')
     return ConversationHandler.END
 

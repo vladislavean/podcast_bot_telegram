@@ -4,18 +4,28 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-class Video:
-    def __init__(self, url: str):
-        self.yt = YouTube(url)
-        self.video = self.yt.streams.filter(only_audio=True).first() 
+class Video: 
     
+    def __init__(self, url: str):
+        try:
+            self.yt = YouTube(url)
+            self.video = self.yt.streams.filter(only_audio=True).first()
+        except:
+            pass
+    @property
+    def get_video(self):
+        return self.video
+
     @property
     def get_video_title(self) -> str:
         return self.video.title
     
+
+class VideoDownloader:
     
-    def download_video(self) -> None:
-        self.video.download(filename=f'{os.getcwd()}/static/{self.get_video_title()}.mp3')
+    @staticmethod
+    def download_video(video: Video) -> None:    
+        video.get_video.download(filename=f'{os.getcwd()}/static/{video.get_video_title}.mp3')
         
     
     

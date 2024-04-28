@@ -17,9 +17,9 @@ class HandlersDeclaration:
         conv_handler_mp3 = ConversationHandler(
             entry_points=[CommandHandler('get_mp3', get_mp3_file)],
             states= {
-                GET_VIDEO: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_video), CommandHandler('cancel', cancle_url_getting)],
+                GET_VIDEO: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_video), CommandHandler('cancel', cancel_url_getting)],
             },
-            fallbacks=[CommandHandler('cancel_getting', cancle_url_getting)]
+            fallbacks=[CommandHandler('cancel_getting', cancel_url_getting)]
         )
         return conv_handler_mp3
    
