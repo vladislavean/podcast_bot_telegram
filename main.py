@@ -18,10 +18,14 @@ import os
 from exceptions import StartingAppError
 from handlers_declaration import HandlersDeclaration
 
+import logging
+
+
 from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
+logger = logging.basicConfig(level=logging.DEBUG, filename="bot_log.log")
 
 def get_app(TOKEN: str):
     app = ApplicationBuilder().token(TOKEN).build()
@@ -35,6 +39,8 @@ def get_app(TOKEN: str):
 if __name__ == '__main__':
     try:
         app = get_app(TOKEN)
+        logging.info("App are created")
+        logging.info("Starting...")
         app.run_polling()
     except:
         raise StartingAppError
