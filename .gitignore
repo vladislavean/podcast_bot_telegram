@@ -5,7 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
-
+.test.py
+.mp3_to_text_convert.py
+.translate_handlers.py
 # Distribution / packaging
 .Python
 build/
