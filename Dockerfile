@@ -20,4 +20,4 @@ COPY poetry.lock pyproject.toml ./
 RUN poetry install
 # Run your app
 COPY . /app
-CMD [ "poetry", "run", "python3.12", "main.py" ]
+CMD [ "poetry", "run", "python3.12", "podcast_translation_bot/main.py" ]

@@ -25,7 +25,7 @@ class VideoDownloader:
     
     @staticmethod
     def download_video(video: Video) -> None:    
-        video.get_video.download(filename=f'{os.getcwd()}/static/{video.get_video_title}.mp3')
+        video.get_video.download(filename=f'{os.getcwd()}/../static/{video.get_video_title}.mp3')
         
     
     

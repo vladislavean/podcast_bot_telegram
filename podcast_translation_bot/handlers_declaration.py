@@ -4,7 +4,7 @@ from telegram.ext import (ConversationHandler,
                           filters, 
                           MessageHandler,
                           ApplicationBuilder)
-from podcast_translation_bot.handlers import (start, 
+from handlers import (start, 
                             get_mp3_file, 
                             get_mp3_file_with_translate, 
                             get_video, 

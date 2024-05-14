@@ -10,10 +10,22 @@ python telegram bot https://docs.python-telegram-bot.org/en/v21.1.1/index.html �
     2. Видео в аудио с переводом
         Будут кнопки с языком
 
+        
+В голову пришла идея написать это в виде микросервиса, будет сервис который будет отвечать за статические файлы их отдачу и загрузку.
+И рядом будет клиент телеграм бот
+хочется сделать два сервиса 
+
+1 для статики
+2 для запросов 
+но как это реализовать пока не сильно понятно
+
+https://fastapi.tiangolo.com/ru/tutorial/static-files/
+https://habr.com/ru/articles/710376/
+
 """
 
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
-from podcast_translation_bot.handlers import start, get_mp3_file, get_mp3_file_with_translate, get_video, GET_VIDEO, cancel_url_getting
+from handlers import start, get_mp3_file, get_mp3_file_with_translate, get_video, GET_VIDEO, cancel_url_getting
 import os
 from exceptions import StartingAppError
 from handlers_declaration import HandlersDeclaration
