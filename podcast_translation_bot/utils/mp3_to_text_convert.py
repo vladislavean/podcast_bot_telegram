@@ -1,15 +1,18 @@
 import speech_recognition as rc
 
+
 class TranslateVideo:
-    
+
     def translate_text(self, mp3_file):
         pass
 
 
 class ConvertToText:
-    
+
     @staticmethod
-    def convert_mp3_to_text(file):
+    def convert_mp3_to_text(
+            file
+    ) -> str:
         recognizer = rc.Recognizer()
         with rc.AudioFile(file) as source:
             audio = recognizer.record(source)
@@ -18,4 +21,3 @@ class ConvertToText:
 
     def get_text(self, file):
         pass
-

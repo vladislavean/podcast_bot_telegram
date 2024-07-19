@@ -19,32 +19,38 @@ python telegram bot https://docs.python-telegram-bot.org/en/v21.1.1/index.html �
 2 для запросов 
 но как это реализовать пока не сильно понятно
 
+
+На данный момент на сервере настроена отдача файлов, осталось наверное просто развернуть приложение на сервере.
+
+
 https://fastapi.tiangolo.com/ru/tutorial/static-files/
 https://habr.com/ru/articles/710376/
 
 """
 
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, ConversationHandler, MessageHandler, filters
-from handlers import start, get_mp3_file, get_mp3_file_with_translate, get_video, GET_VIDEO, cancel_url_getting
+from telegram.ext import ApplicationBuilder
 import os
 from exceptions import StartingAppError
 from handlers_declaration import HandlersDeclaration
 
 import logging
 
-
 from dotenv import load_dotenv
+
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-logger = logging.basicConfig(level=logging.DEBUG, filename="bot_log.log")
+logging.basicConfig(level=logging.DEBUG, filename="bot_log.log")
 
-def get_app(TOKEN: str):
+
+def get_app(
+        TOKEN: str
+) -> ApplicationBuilder:
     app = ApplicationBuilder().token(TOKEN).build()
-    
+
     handlers = HandlersDeclaration()
     application = handlers.handlers_declaration(app)
-    
+
     return application
 
 
